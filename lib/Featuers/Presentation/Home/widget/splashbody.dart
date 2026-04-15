@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/Core/utils/widget/logoApp.dart';
-import 'package:news/Featuers/Home/widget/category.dart';
+import 'package:news/Featuers/Presentation/Home/widget/category.dart';
 
 class Homebody extends StatelessWidget {
   const Homebody({super.key});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:news/Featuers/Home/widget/ListViewNews.dart';
+import 'package:news/Featuers/Presentation/Home/widget/ListViewNews.dart';
 
-import 'package:news/Featuers/Home/widget/listviewcategory.dart';
-import 'package:news/Featuers/Home/widget/titleMain.dart';
+import 'package:news/Featuers/Presentation/Home/widget/listviewcategory.dart';
+import 'package:news/Featuers/Presentation/Home/widget/titleMain.dart';
 
 class Category extends StatelessWidget {
   const Category({super.key});

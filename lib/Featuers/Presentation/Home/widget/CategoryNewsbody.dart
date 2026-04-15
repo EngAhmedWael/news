@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:news/Featuers/Home/widget/ListViewNews.dart';
-import 'package:news/Featuers/Home/widget/RowAppbar.dart';
+import 'package:news/Featuers/Presentation/Home/widget/ListViewNews.dart';
+import 'package:news/Featuers/Presentation/Home/widget/RowAppbar.dart';
 
 class CategoryNewsbody extends StatelessWidget {
   const CategoryNewsbody({super.key});

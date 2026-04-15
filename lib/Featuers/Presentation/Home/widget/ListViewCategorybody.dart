@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news/Featuers/model/categorymodel.dart';
+import 'package:news/Featuers/Presentation/Home/model/categorymodel.dart';
 
 class ListViewCategorybody extends StatelessWidget {
   const ListViewCategorybody({

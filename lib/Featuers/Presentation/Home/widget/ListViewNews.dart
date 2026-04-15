@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news/Core/utils/router.dart';
-import 'package:news/Featuers/Home/widget/ListViewNewsbody.dart';
+import 'package:news/Featuers/Presentation/Home/widget/ListViewNewsbody.dart';
 
 class ListViewNews extends StatelessWidget {
   const ListViewNews({super.key});

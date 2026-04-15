@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news/Core/utils/router.dart';
-import 'package:news/Featuers/Home/widget/ListViewCategorybody.dart';
-
-import 'package:news/Featuers/model/categorymodel.dart';
+import 'package:news/Featuers/Presentation/Home/model/categorymodel.dart';
+import 'package:news/Featuers/Presentation/Home/widget/ListViewCategorybody.dart';
 
 class ListViewCategory extends StatefulWidget {
   const ListViewCategory({super.key});

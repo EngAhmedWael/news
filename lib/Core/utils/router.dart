@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
-import 'package:news/Featuers/Home/home.dart';
-import 'package:news/Featuers/Home/widget/CategoryNews.dart';
-import 'package:news/Featuers/Home/widget/News.dart';
+import 'package:news/Featuers/Presentation/Home/home.dart';
+import 'package:news/Featuers/Presentation/Home/widget/CategoryNews.dart';
+import 'package:news/Featuers/Presentation/Home/widget/News.dart';
 
 class AppRouter {
   static String home = '/';

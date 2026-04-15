@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/Core/utils/style.dart';
-import 'package:news/Featuers/Home/widget/RowAppbar.dart';
+import 'package:news/Featuers/Presentation/Home/widget/RowAppbar.dart';
 
 class Newsbody extends StatelessWidget {
   const Newsbody({super.key});
