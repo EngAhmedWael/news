@@ -7,18 +7,20 @@ import 'package:news/Featuers/Presentation/Home/manager/Newstate.dart';
 import 'package:news/Featuers/Presentation/Home/widget/ListNewsloadingdata.dart';
 import 'package:news/Featuers/Presentation/Home/widget/ListViewNewsbody.dart';
 
-class ListViewNews extends StatefulWidget {
-  const ListViewNews({super.key});
-
+class CategoryListNews extends StatefulWidget {
+  const CategoryListNews({super.key, required this.category});
+  final String category;
   @override
-  State<ListViewNews> createState() => _ListViewNewsState();
+  State<CategoryListNews> createState() => _CategoryListNewsState();
 }
 
-class _ListViewNewsState extends State<ListViewNews> {
+class _CategoryListNewsState extends State<CategoryListNews> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<Newscubit>(context).getNewsData(la: 'en');
+    BlocProvider.of<Newscubit>(
+      context,
+    ).getCategoryNewsData(la: 'en', category: widget.category);
   }
 
   @override

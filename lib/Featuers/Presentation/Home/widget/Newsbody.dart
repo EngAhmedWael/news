@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:news/Core/utils/style.dart';
+import 'package:news/Featuers/Data/Model/Newsmodel.dart';
 import 'package:news/Featuers/Presentation/Home/widget/RowAppbar.dart';
 
 class Newsbody extends StatelessWidget {
-  const Newsbody({super.key});
-
+  const Newsbody({super.key, required this.article});
+  final Newsmodel article;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -14,7 +16,7 @@ class Newsbody extends StatelessWidget {
           RowAppbar(),
           SizedBox(height: 20),
           Text(
-            "Apple introduces powerful AI tools with latest iOS 19 update.",
+            article.title == null ? '' : article.title!,
             style: AppStyle.titleStyle,
           ),
 
@@ -22,14 +24,16 @@ class Newsbody extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 8),
               child: Image.network(
-                'https://tse1.mm.bing.net/th/id/OIP.UAD3SmmOK4wNV23uaMTDxgHaE8?pid=Api&h=220&P=0',
+                article.urlToImage == null
+                    ? "https://as2.ftcdn.net/v2/jpg/02/12/50/11/1000_F_212501134_9byDWDYbOIrxY0vE1iCTF4ZztasKlwek.jpg"
+                    : article.urlToImage!,
                 fit: BoxFit.fill,
               ),
             ),
           ),
 
           Text(
-            'Global stocks fall ahead of key U.S. interest rate decision.Global stocks slipped as investors await the U.S. Federal Reserve’s interest rate decision. While no hike is expected, markets are watching for hints on future cuts. The dollar weakened, bond yields fell, and volatility rose. Sectors like tech may benefit, while financials and industrials could face pressure from economic uncertainty.',
+            article.description == null ? '' : article.description!,
             style: AppStyle.subtitleStyle,
           ),
         ],
