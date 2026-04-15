@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:news/Core/utils/router.dart';
 import 'package:news/Core/utils/widget/logoApp.dart';
 import 'package:news/Featuers/Presentation/Home/widget/category.dart';
 
@@ -14,7 +16,13 @@ class Homebody extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [logoApp(), Category()],
+              children: [
+                InkWell(
+                  onTap: () => GoRouter.of(context).push(AppRouter.settings),
+                  child: logoApp(),
+                ),
+                Category(),
+              ],
             ),
           ),
         ),
