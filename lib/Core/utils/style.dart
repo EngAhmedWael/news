@@ -7,11 +7,15 @@ class AppStyle {
     color: Colors.black,
   );
   static TextStyle subtitleStyle = TextStyle(
-    fontSize: 18,
-    fontWeight: FontWeight.bold,
+    fontSize: 14,
+    fontWeight: FontWeight.normal,
     color: Colors.black,
   );
-  static TextStyle bodyStyle = TextStyle(fontSize: 16, color: Colors.black);
+  static TextStyle bodyStyle = TextStyle(
+    fontSize: 25,
+    color: Colors.black,
+    fontWeight: FontWeight.bold,
+  );
   static TextStyle smallStyle = TextStyle(fontSize: 14, color: Colors.black);
   static TextStyle smallStyleWhite = TextStyle(
     fontSize: 14,
