@@ -1,0 +1,14 @@
+{
+  "category":"category",
+  "language": "Language",
+  "news_today": "News Today",
+  "darkMode": "Dark Mode",
+  "sports":"sports",
+  "technology":"technology",
+  "health":"health",
+  "business":"business",
+  "science":"science",
+  "education":"education"
+}
+
+ 

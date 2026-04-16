@@ -3,6 +3,7 @@ import 'package:news/Featuers/Presentation/Home/widget/ListViewNews.dart';
 
 import 'package:news/Featuers/Presentation/Home/widget/listviewcategory.dart';
 import 'package:news/Featuers/Presentation/Home/widget/titleMain.dart';
+import 'package:news/l10n/app_localizations.dart';
 
 class Category extends StatelessWidget {
   const Category({super.key});
@@ -12,11 +13,11 @@ class Category extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: 15),
-        Titlemain(title: 'Category', size: 0.66),
+        Titlemain(title: AppLocalizations.of(context)!.category, size: 0.66),
         ListViewCategory(),
         SizedBox(height: 15),
 
-        Titlemain(title: 'News Today', size: 0.58),
+        Titlemain(title: AppLocalizations.of(context)!.news_today, size: 0.58),
         ListViewNews(),
       ],
     );

@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:news/Core/utils/router.dart';
 import 'package:news/Featuers/Presentation/Home/model/categorymodel.dart';
 import 'package:news/Featuers/Presentation/Home/widget/ListViewCategorybody.dart';
+import 'package:news/Featuers/Presentation/Home/widget/getcategorylist.dart';
 
 class ListViewCategory extends StatefulWidget {
   const ListViewCategory({super.key});
@@ -12,16 +13,9 @@ class ListViewCategory extends StatefulWidget {
 }
 
 class _ListViewCategoryState extends State<ListViewCategory> {
-  final List<Categorymodel> category = [
-    Categorymodel(name: 'education', image: 'assets/images/all.jpg'),
-    Categorymodel(name: 'sports', image: 'assets/images/sports.png'),
-    Categorymodel(name: 'health', image: 'assets/images/healty.png'),
-    Categorymodel(name: 'technology', image: 'assets/images/techonlogy.jpg'),
-    Categorymodel(name: 'science', image: 'assets/images/science.jpg'),
-    Categorymodel(name: 'business', image: 'assets/images/bussiness.jpg'),
-  ];
   @override
   Widget build(BuildContext context) {
+    final List<Categorymodel> category = getCategories(context);
     return SizedBox(
       height: 120,
       child: ListView.builder(

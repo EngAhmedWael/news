@@ -7,6 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:news/Featuers/Presentation/Home/manager/language/LanguageCubit.dart';
 import 'package:news/Featuers/Presentation/Home/manager/theme/ThemeCubit.dart';
 
 import 'package:news/main.dart';
@@ -15,8 +16,11 @@ void main() {
   testWidgets('Theme toggle test', (WidgetTester tester) async {
     final themeCubit = Themecubit();
     await themeCubit.themeloaded();
-
-    await tester.pumpWidget(MyApp(themecubit: themeCubit));
+    final languageCubit = LanguageCubit();
+    await languageCubit.getlanguage();
+    await tester.pumpWidget(
+      MyApp(themecubit: themeCubit, languageCubit: languageCubit),
+    );
 
     // تأكد إن التطبيق اشتغل
     expect(find.byType(MaterialApp), findsOneWidget);

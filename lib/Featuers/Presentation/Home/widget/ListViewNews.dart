@@ -4,6 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:news/Core/utils/router.dart';
 import 'package:news/Featuers/Presentation/Home/manager/NewsCubit.dart';
 import 'package:news/Featuers/Presentation/Home/manager/Newstate.dart';
+import 'package:news/Featuers/Presentation/Home/manager/language/LanguageCubit.dart';
+import 'package:news/Featuers/Presentation/Home/manager/language/languagestate.dart';
 import 'package:news/Featuers/Presentation/Home/widget/ListNewsloadingdata.dart';
 import 'package:news/Featuers/Presentation/Home/widget/ListViewNewsbody.dart';
 
@@ -18,7 +20,18 @@ class _ListViewNewsState extends State<ListViewNews> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<Newscubit>(context).getNewsData(la: 'en');
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final langState = context.read<LanguageCubit>().state;
+
+      String lang = "en";
+
+      if (langState is LanguageLoaded) {
+        lang = langState.language.languageCode;
+      }
+
+      context.read<Newscubit>().getNewsData(la: lang);
+    });
   }
 
   @override
