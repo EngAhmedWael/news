@@ -4,6 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:news/Core/utils/router.dart';
 import 'package:news/Featuers/Presentation/Home/manager/NewsCubit.dart';
 import 'package:news/Featuers/Presentation/Home/manager/Newstate.dart';
+import 'package:news/Featuers/Presentation/Home/manager/language/LanguageCubit.dart';
+import 'package:news/Featuers/Presentation/Home/manager/language/languagestate.dart';
 import 'package:news/Featuers/Presentation/Home/widget/ListNewsloadingdata.dart';
 import 'package:news/Featuers/Presentation/Home/widget/ListViewNewsbody.dart';
 
@@ -18,9 +20,19 @@ class _CategoryListNewsState extends State<CategoryListNews> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<Newscubit>(
-      context,
-    ).getCategoryNewsData(la: 'en', category: widget.category);
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final langState = context.read<LanguageCubit>().state;
+
+      String lang = "en";
+
+      if (langState is LanguageLoaded) {
+        lang = langState.language.languageCode;
+      }
+      BlocProvider.of<Newscubit>(
+        context,
+      ).getCategoryNewsData(la: lang, category: widget.category);
+    });
   }
 
   @override

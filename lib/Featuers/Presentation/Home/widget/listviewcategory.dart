@@ -25,7 +25,7 @@ class _ListViewCategoryState extends State<ListViewCategory> {
         itemBuilder: (context, index) => InkWell(
           onTap: () => GoRouter.of(
             context,
-          ).push(AppRouter.categoryNews, extra: category[index].name),
+          ).push(AppRouter.categoryNews, extra: category[index].categoryname),
           child: ListViewCategorybody(category: category, index: index),
         ),
       ),
