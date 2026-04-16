@@ -12,7 +12,7 @@ class RowAppbar extends StatelessWidget {
       children: [
         IconButton(
           padding: EdgeInsets.zero,
-          onPressed: () => GoRouter.of(context).pushNamed(AppRouter.home),
+          onPressed: () => context.goNamed(AppRouter.home),
           icon: Icon(Icons.arrow_back, size: 30),
         ),
 
