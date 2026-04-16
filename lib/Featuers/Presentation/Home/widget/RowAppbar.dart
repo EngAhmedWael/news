@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:news/Core/utils/router.dart';
 import 'package:news/Core/utils/widget/logoApp.dart';
 
 class RowAppbar extends StatelessWidget {
@@ -11,7 +12,7 @@ class RowAppbar extends StatelessWidget {
       children: [
         IconButton(
           padding: EdgeInsets.zero,
-          onPressed: () => GoRouter.of(context).pop(),
+          onPressed: () => GoRouter.of(context).pushNamed(AppRouter.home),
           icon: Icon(Icons.arrow_back, size: 30),
         ),
 
