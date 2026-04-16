@@ -13,7 +13,7 @@ class AppRouter {
 
   static GoRouter router = GoRouter(
     routes: [
-      GoRoute(path: '/', builder: (context, state) => Home()),
+      GoRoute(path: '/', name: home, builder: (context, state) => Home()),
       GoRoute(
         path: '/News',
         name: news,

@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news/Featuers/Presentation/Home/manager/language/LanguageCubit.dart';
-import 'package:news/Featuers/Presentation/Home/manager/language/languagestate.dart';
-import 'package:news/Featuers/Presentation/Home/manager/theme/ThemeCubit.dart';
-import 'package:news/Featuers/Presentation/Home/manager/theme/themestate.dart';
+import 'package:news/Featuers/Presentation/Home/widget/LanguageSwitchWidget.dart';
 import 'package:news/Featuers/Presentation/Home/widget/RowAppbar.dart';
-import 'package:news/core/utils/style.dart';
-
-import 'package:news/l10n/app_localizations.dart';
+import 'package:news/Featuers/Presentation/Home/widget/ThemeSwitchWidget.dart';
 
 class Settings extends StatelessWidget {
   const Settings({super.key});
@@ -40,55 +34,6 @@ class SettingsBody extends StatelessWidget {
           const LanguageSwitchWidget(),
         ],
       ),
-    );
-  }
-}
-
-class ThemeSwitchWidget extends StatelessWidget {
-  const ThemeSwitchWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<Themecubit, ThemeState>(
-      builder: (context, state) {
-        final isDark = state is ThemeLoad && state.themeMode == ThemeMode.dark;
-
-        return SwitchListTile(
-          title: Text(
-            AppLocalizations.of(context)!.darkMode,
-            style: AppStyle.titleStyle,
-          ),
-          value: isDark,
-          onChanged: (value) {
-            context.read<Themecubit>().toggleTheme();
-          },
-        );
-      },
-    );
-  }
-}
-
-class LanguageSwitchWidget extends StatelessWidget {
-  const LanguageSwitchWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<LanguageCubit, LanguageState>(
-      builder: (context, state) {
-        final isArabic =
-            state is LanguageLoaded && state.language.languageCode == "ar";
-
-        return SwitchListTile(
-          title: Text(
-            AppLocalizations.of(context)!.language,
-            style: AppStyle.titleStyle,
-          ),
-          value: isArabic,
-          onChanged: (value) {
-            context.read<LanguageCubit>().changeLanguage();
-          },
-        );
-      },
     );
   }
 }
